@@ -1,4 +1,5 @@
 from collections import deque
+import queue
 import sys
 input = sys.stdin.readline
 
@@ -10,18 +11,15 @@ for i in range(0, m):
     a, b = map(int, input().split())
     # (a,b)가 li에 있는지 확인
     if a not in li:
-        # li[a] = b
         li[a].append(b)
     elif b not in li[a]:
-        # li[b] = a
         li[b].append(a)
     # (b,a)가 li에 있는지 확인 (양방향으로 넣어줘야함.)      
     if b not in li:
-        # li[b] = a
         li[b].append(a)
     elif a not in li[b]:
-        # li[a] = b
         li[a].append(b)
+
 for i in range(0, len(li)):
     li[i].sort()
 
@@ -34,9 +32,8 @@ def dfs(list, start):
         t = stack.pop()
         if t not in visitedDfs:
             visitedDfs.append(t)
-            if list[t]:
-                for g in list[t]:
-                    dfs(list, g)
+            for g in list[t]:
+                dfs(list, g)
 
 global visitedBfs
 visitedBfs = [] 
@@ -50,7 +47,16 @@ def bfs(list, start):
             for g in list[t]:
                 deq.append(g)
                 
-        
+# def bfs(list, start):
+#     que = queue([start])
+#     while que:
+#         t = que.pop(0)
+#         if t not in visitedBfs:
+#             visitedBfs.append(t)
+#             for g in list[t]:
+#                 que.append(g)
+
+
 dfs(li, v)
 bfs(li, v)
 
