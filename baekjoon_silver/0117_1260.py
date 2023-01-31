@@ -46,15 +46,7 @@ def bfs(list, start):
             visitedBfs.append(t)
             for g in list[t]:
                 deq.append(g)
-                
-# def bfs(list, start):
-#     que = queue([start])
-#     while que:
-#         t = que.pop(0)
-#         if t not in visitedBfs:
-#             visitedBfs.append(t)
-#             for g in list[t]:
-#                 que.append(g)
+
 
 
 dfs(li, v)
