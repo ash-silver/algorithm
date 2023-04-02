@@ -12,6 +12,7 @@ for _ in range(0, n):
     minIndex = min(x, minIndex)
     maxIndex = max(x, maxIndex)
     pail[x] = g
+    
 step = 2 * k + 1
 slice = sum(pail[:step])
 answer = slice
