@@ -14,7 +14,5 @@ for i in range(0, len(plusSen)):
         answer = tmpSum
     else:
         answer -= tmpSum
-    
-    
 
 print(answer)
