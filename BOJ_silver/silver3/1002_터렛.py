@@ -12,14 +12,12 @@ for i in range(0, t):
             answer.append(-1)
         else:
             answer.append(0)
-    elif distance < (r1 + r2):
+    elif abs(r2 - r1) <distance < (r1 + r2):
         answer.append(2)
-    elif distance == (r1 + r2):
+    elif distance == (r1 + r2) or distance == abs(r2 - r1):
         answer.append(1)    
-    elif distance > (r1 + r2):
+    else :
         answer.append(0)
-    else:
-        answer.append(-1)
 
 for i in answer:
     print(i)
